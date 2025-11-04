@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#d32f2f" />
+    <meta name="author" content="BloodLink" />
+    <meta name="description" content="BloodLink — a privacy-first blood donation platform connecting donors, hospitals and organizations to ensure timely, traceable access to blood." />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="BloodLink — Connect Donors & Hospitals" />
+    <meta property="og:description" content="Join our community to donate blood, request donations, and manage inventory across hospitals and NGOs." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- Fonts (optional) -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <title>BloodLink — Blood Bank</title>
+
+    <style>
+      /* Minimal initial font to avoid FOUT before app CSS loads */
+      html, body { height: 100%; margin: 0; }
+      body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; -webkit-font-smoothing:antialiased; }
+      /* Optional: basic background to match brand */
+      :root { --bb-bg: #fff; --bb-accent: #d32f2f; }
+      body { background: var(--bb-bg); color: #111; }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!--
+      This file is the template used by Create React App. During `npm run build`
+      the build step will replace %PUBLIC_URL% and inject script tags for the
+      compiled JS bundles into the end of the body.
+    -->
+  </body>
+</html>
+
