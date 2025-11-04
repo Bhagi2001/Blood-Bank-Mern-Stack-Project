@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d446226a.css",
+    "main.js": "/static/js/main.2825ceeb.js",
+    "static/js/453.0610e407.chunk.js": "/static/js/453.0610e407.chunk.js",
+    "static/media/Nurse preparing blood donation.jpg": "/static/media/Nurse preparing blood donation.30655d5fa4a274782d77.jpg",
+    "static/media/Thankful for blood donation.png": "/static/media/Thankful for blood donation.14439ff55aeb464b5b8c.png",
+    "static/media/Blood group.png": "/static/media/Blood group.04236822a6066dae8bf6.png",
+    "static/media/Hospital staff collaborating.jpg": "/static/media/Hospital staff collaborating.f4a39e94b9570e350abd.jpg",
+    "static/media/Medical equipment in clinic.jpg": "/static/media/Medical equipment in clinic.91eec0d77a60e30c6289.jpg",
+    "static/media/Blood bag stored in a rack.jpg": "/static/media/Blood bag stored in a rack.a176407e1df8097b20a6.jpg",
+    "index.html": "/index.html",
+    "main.d446226a.css.map": "/static/css/main.d446226a.css.map",
+    "main.2825ceeb.js.map": "/static/js/main.2825ceeb.js.map",
+    "453.0610e407.chunk.js.map": "/static/js/453.0610e407.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d446226a.css",
+    "static/js/main.2825ceeb.js"
+  ]
+}
