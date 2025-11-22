@@ -19,12 +19,16 @@ export default function Donors() {
           <div>Name</div>
           <div>Blood Type</div>
           <div>Last Donation</div>
+          <div>Province</div>
+          <div>Contact</div>
         </div>
         {list.map(d => (
           <div key={d.id} className="bb-trow">
             <div>{d.name}</div>
             <div>{d.bloodType}</div>
             <div>{d.lastDonation}</div>
+            <div>{d.province}</div>
+            <div>{d.contact}</div>
           </div>
         ))}
       </div>

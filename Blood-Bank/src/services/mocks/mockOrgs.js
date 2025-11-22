@@ -1,11 +1,13 @@
 const donors = [
-  { id: 'd1', name: 'John Doe', bloodType: 'A+', lastDonation: '2025-10-11' },
-  { id: 'd2', name: 'Jane Smith', bloodType: 'O-', lastDonation: '2025-08-20' },
+  { id: 'd1', name: 'Mr. Sunil Perera', bloodType: 'A+', lastDonation: '2025-10-11', province: 'Western', contact: '071-1234567' },
+  { id: 'd2', name: 'Ms. Anjali Kumar', bloodType: 'O-', lastDonation: '2025-08-20', province: 'Central', contact: '072-2345678' },
+  { id: 'd3', name: 'Mr. Ramesh Silva', bloodType: 'B+', lastDonation: '2025-09-15', province: 'Southern', contact: '073-3456789' },
 ];
 
 const hospitals = [
-  { id: 'h1', name: 'City Hospital', city: 'Lagos' },
-  { id: 'h2', name: 'General Hospital', city: 'Abuja' },
+  { id: 'h1', hospital: 'General Hospital', city: 'Colombo', province: 'Western', type: 'Public', contact: '011-1234567' },
+  { id: 'h2', hospital: 'General Hospital', city: 'Kandy', province: 'Central', type: 'Public', contact: '081-7654321' },
+  { id: 'h3', hospital: 'Nawaloka Hospital', city: 'Colombo', province: 'Western', type: 'Private', contact: '011-2345678' },
 ];
 
 export const mockOrgs = {

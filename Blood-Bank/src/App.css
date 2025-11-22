@@ -87,7 +87,7 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Robo
 
 /* Table */
 .bb-table { border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
-.bb-thead, .bb-trow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.bb-thead, .bb-trow { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; }
 .bb-thead { background: #fafafa; font-weight: 600; }
 .bb-thead > div, .bb-trow > div { padding: 10px 12px; border-bottom: 1px solid #eee; }
 

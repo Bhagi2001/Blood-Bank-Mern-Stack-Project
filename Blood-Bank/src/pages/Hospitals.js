@@ -16,13 +16,19 @@ export default function Hospitals() {
       <h2>Hospitals</h2>
       <div className="bb-table">
         <div className="bb-thead">
-          <div>Name</div>
+          <div>Hospital</div>
           <div>City</div>
+          <div>Province</div>
+          <div>Type</div>
+          <div>Contact</div>
         </div>
         {list.map(h => (
           <div key={h.id} className="bb-trow">
-            <div>{h.name}</div>
+            <div>{h.hospital}</div>
             <div>{h.city}</div>
+            <div>{h.province}</div>
+            <div>{h.type}</div>
+            <div>{h.contact}</div>
           </div>
         ))}
       </div>
