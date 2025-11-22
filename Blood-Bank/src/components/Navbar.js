@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLocale } from '../context/LocaleContext';
 
 
 export default function Navbar() {
   const { user, logout, isAuthenticated } = useAuth();
+  const { locale, setLocale } = useLocale();
 
   return (
     <nav className="bb-nav bb-nav--frost">
@@ -27,6 +29,11 @@ export default function Navbar() {
         )}
       </div>
       <div className="bb-nav__right">
+        <div className="bb-lang">
+          <button className={`bb-lang__btn ${locale === 'en' ? 'is-active' : ''}`} onClick={() => setLocale('en')}>EN</button>
+          <button className={`bb-lang__btn ${locale === 'si' ? 'is-active' : ''}`} onClick={() => setLocale('si')}>සිං</button>
+          <button className={`bb-lang__btn ${locale === 'ta' ? 'is-active' : ''}`} onClick={() => setLocale('ta')}>த</button>
+        </div>
         {isAuthenticated ? (
           <>
             <span className="bb-user">{user?.name} ({user?.role})</span>

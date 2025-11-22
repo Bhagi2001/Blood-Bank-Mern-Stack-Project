@@ -1,9 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLocale } from '../context/LocaleContext';
+
+const TRANSLATIONS = {
+  en: {
+    title: ['Save a Life', 'Today, Donate', 'Blood'],
+    lead: 'Join our community of donors and organizations helping ensure safe and timely access to blood. Every donation can save up to three lives.',
+    become: 'Become a Donor',
+    request: 'Request Blood',
+    secure: 'Secure, privacy-first platform',
+    stats: ['Units Donated', 'Registered Donors', 'Emergency Support', 'Traceable Inventory'],
+    whyTitle: 'Why Your Blood Donation Matters',
+    howTitle: 'How BloodLink Works',
+    steps: ['Register as Donor', 'Find Donation Drives', 'Save Lives'],
+    ctaTitle: 'Your Immediate Action Can Change a Life.',
+    pledge: 'Pledge to Donate'
+  },
+  si: {
+    title: ['ජීවිතයක් රැකගන්න', 'අද රුධිර දානය කරන්න', ''],
+    lead: 'රුධිරයට ආරක්ෂිත සහ වේලාවට ගැලපෙන ප්‍රවේශයක් සපයන දායකයින් සහ සංවිධාන සමූහයට එකතුවන්න. සෑම දානයක්ම ත්‍රිදේහයක් දක්වා ජීවිතයන් බේරා ගත හැක.',
+    become: 'දායකයෙක් වන්න',
+    request: 'රුධිර ඉල්ලීම',
+    secure: 'සුරක්ෂිත, පෞද්ගලිකත්ව-ප්‍රමුඛ වේදිකාව',
+    stats: ['දාන කළ ඒකක', 'ලියාපදිංචි දායකයන්', '24/7 හදිසි සහය', 'සංවිධාන කාර්ය සාධනය'],
+    whyTitle: 'ඔබේ රුධිර දාන කිරීම ඇයි වැදගත්ද',
+    howTitle: 'BloodLink ක්‍රියාකාරීත්වය',
+    steps: ['දායකයෙකු ලෙස ලියාපදිංචි වන්න', 'දාන වැඩසටහන් සොයන්න', 'ජීවිත බේරා ගන්න'],
+    ctaTitle: 'ඔබේ වහාම ක්‍රියාකාරිත්වය ජීවිතයක් වෙනස් කළ හැක.',
+    pledge: 'දානයට ඔරොත්තු වන්න'
+  },
+  ta: {
+    title: ['ஒரு உயிரை காப்பாற்றுங்கள்', 'இன்று இரத்தம் தானம் செய்யவும்', ''],
+    lead: 'இரத்தத்திற்கு பாதுகாப்பான மற்றும் நேர்த்தியான அணுகலை உறுதி செய்ய உதவும் தானிகளும் அமைப்புகளும் உள்ள சமூகத்தில் சேரவும். ஒவ்வொரு தானமும் பல உயிர்களை காப்பாற்றலாம்.',
+    become: 'தானியாளர் ஆகவும்',
+    request: 'இரத்தம் கோருங்கள்',
+    secure: 'பாதுகாப்பான, தனியுரிமை முன்னுரிமை வலைமொழி',
+    stats: ['தானிக்கப்பட்ட அலகுகள்', 'பதிவுசெய்த தானியாளர்கள்', '24/7 அவசர ஆதரவு', 'காணப்படும் சரக்குகள்'],
+    whyTitle: 'உங்கள் இரத்தத் தானம் ஏன் முக்கியம்',
+    howTitle: 'BloodLink எப்படி செயல்படுகிறது',
+    steps: ['தானியாளராக பதிவு செய்க', 'தான நிகழ்ச்சிகளை கண்டறிக', 'வாழ்க்கைகளை காப்பாற்று'],
+    ctaTitle: 'உங்கள் உடனடி நடவடிக்கை ஒரு உயிரை மாற்றக்கூடும்.',
+    pledge: 'தானம் உறுதிபடுத்துங்கள்'
+  }
+};
 
 export default function Home() {
   const { isAuthenticated } = useAuth();
+  const { locale } = useLocale();
+  const t = TRANSLATIONS[locale] || TRANSLATIONS.en;
   const slides = [
     {
       src: require('../assets/images/Blood group.png'),
@@ -75,25 +120,20 @@ export default function Home() {
       <section className="bb-hero">
         <div className="bb-hero__content">
           <h1>
-            Save a Life
-            <br /> Today, Donate
-            <br /> Blood
+            {t.title[0]}<br />{t.title[1]}{t.title[2] ? <><br />{t.title[2]}</> : null}
           </h1>
-          <p className="bb-muted">
-            Join our community of donors and organizations helping ensure safe
-            and timely access to blood. Every donation can save up to three lives.
-          </p>
+          <p className="bb-muted">{t.lead}</p>
           <div className="bb-actions">
             {isAuthenticated ? (
               <Link className="bb-btn" to="/dashboard">Go to Dashboard</Link>
             ) : (
               <>
-                <Link className="bb-btn" to="/register">Become a Donor</Link>
-                <Link className="bb-btn bb-btn--ghost" to="/login">Request Blood</Link>
+                <Link className="bb-btn" to="/register">{t.become}</Link>
+                <Link className="bb-btn bb-btn--ghost" to="/login">{t.request}</Link>
               </>
             )}
           </div>
-          <div className="bb-hero__meta bb-muted">Secure, privacy-first platform</div>
+          <div className="bb-hero__meta bb-muted">{t.secure}</div>
         </div>
           <div className="bb-hero__media">
             <div className="bb-slider" aria-label="Donation images slider" role="region">

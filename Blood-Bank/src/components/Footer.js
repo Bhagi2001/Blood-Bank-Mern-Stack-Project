@@ -10,7 +10,8 @@ export default function Footer() {
           <span className="bb-logo__mark">
             <img src="/blood-drop.png" alt="BloodLink logo" width="24" height="24" />
           </span> <span className="bb-footer__text">BloodLink</span></div>
-          <p className="bb-muted">Connecting donors, hospitals, and organizations to save lives.</p>
+          <p className="bb-muted">Connecting donors, hospitals, and organizations across Sri Lanka to save lives.</p>
+          <p className="bb-contact">Contact: +94 11 123 4567 · Email: info@bloodlink.lk</p>
         </div>
         <div className="bb-footer__cols">
           <div>
