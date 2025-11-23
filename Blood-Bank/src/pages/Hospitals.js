@@ -5,6 +5,7 @@ export default function Hospitals() {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [provinceQuery, setProvinceQuery] = useState('');
+  const [typeQuery, setTypeQuery] = useState('');
 
   useEffect(() => {
     orgService.listHospitals().then(setList).finally(() => setLoading(false));
@@ -13,7 +14,12 @@ export default function Hospitals() {
   if (loading) return <div className="bb-page-center">Loading…</div>;
 
   const q = provinceQuery.trim().toLowerCase();
-  const filtered = q ? list.filter(h => (h.province || '').toLowerCase().includes(q)) : list;
+  const tq = typeQuery.trim().toLowerCase();
+  let filtered = q ? list.filter(h => (h.province || '').toLowerCase().includes(q)) : list;
+  if (tq) {
+    if (tq === 'public') filtered = filtered.filter(h => ((h.type || '').toLowerCase().includes('public') || h.isPublic));
+    else if (tq === 'private') filtered = filtered.filter(h => ((h.type || '').toLowerCase().includes('private') || h.isPublic === false));
+  }
 
   return (
     <section>
@@ -22,6 +28,15 @@ export default function Hospitals() {
         <div style={{display:'flex', gap:8, alignItems:'center'}}>
           <label style={{color:'#666'}}>Search province:</label>
           <input className="bb-search" value={provinceQuery} onChange={e => setProvinceQuery(e.target.value)} placeholder="e.g., Southern, Uva" />
+
+          <label style={{display:'flex', gap:8, alignItems:'center'}}>
+            Type:
+            <select className="bb-select" value={typeQuery} onChange={e => setTypeQuery(e.target.value)}>
+              <option value="">All</option>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </label>
         </div>
       </div>
 
