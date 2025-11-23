@@ -163,3 +163,6 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Robo
 
 /* search input */
 .bb-search { padding:8px 10px; border:1px solid #ddd; border-radius:8px; min-width:220px }
+/* select (styled like search) */
+.bb-select { padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fff; min-width:180px }
+
