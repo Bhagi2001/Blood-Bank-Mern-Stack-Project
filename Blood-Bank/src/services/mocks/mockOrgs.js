@@ -10,6 +10,12 @@ const hospitals = [
   { id: 'h3', hospital: 'Nawaloka Hospital', city: 'Colombo', province: 'Western', type: 'Private', contact: '011-2345678' },
 ];
 
+const requests = [
+  { _id: 'r1', patientName: 'Amara Silva', bloodGroup: 'O+', units: 2, center: 'Colombo Blood Centre', status: 'pending', createdAt: new Date().toISOString() },
+  { _id: 'r2', patientName: 'Kamal Perera', bloodGroup: 'A-', units: 1, center: 'Kandy Hospital', status: 'fulfilled', createdAt: new Date().toISOString() },
+  { _id: 'r3', patientName: 'Nadeesha', bloodGroup: 'B+', units: 3, center: 'Galle General', status: 'pending', createdAt: new Date().toISOString() }
+];
+
 export const mockOrgs = {
   listDonors: async () => {
     await new Promise(r => setTimeout(r, 200));
@@ -19,4 +25,16 @@ export const mockOrgs = {
     await new Promise(r => setTimeout(r, 200));
     return hospitals;
   },
+  // Requests mock
+  listRequests: async () => {
+    await new Promise(r => setTimeout(r, 180));
+    // return in axios-like shape to match requestOrMock usage
+    return { data: requests };
+  },
+  addRequest: async (payload) => {
+    const newReq = { _id: `mock-${Date.now()}`, ...payload, createdAt: new Date().toISOString() };
+    requests.unshift(newReq);
+    await new Promise(r => setTimeout(r, 120));
+    return { data: newReq };
+  }
 };
