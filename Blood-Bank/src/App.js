@@ -14,6 +14,7 @@ import Hospitals from './pages/Hospitals';
 import Requests from './pages/Requests';
 import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
+import Help from './pages/Help';
 
 export default function App() {
   return (
@@ -39,6 +40,9 @@ export default function App() {
           <Route element={<ProtectedRoute allow={[ 'admin', 'hospital' ]} />}> 
             <Route path="requests" element={<Requests />} />
           </Route>
+
+          {/* Public support pages */}
+          <Route path="help" element={<Help />} />
         </Route>
 
         <Route element={<AuthLayout />}> 
