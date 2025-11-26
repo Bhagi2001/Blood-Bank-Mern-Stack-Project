@@ -16,6 +16,7 @@ import Profile from './pages/Profile';
 import NotFound from './pages/NotFound';
 import Help from './pages/Help';
 import Safety from './pages/Safety';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
           {/* Public support pages */}
           <Route path="help" element={<Help />} />
           <Route path="safety" element={<Safety />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
 
         <Route element={<AuthLayout />}> 
