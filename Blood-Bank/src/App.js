@@ -18,6 +18,7 @@ import Help from './pages/Help';
 import Safety from './pages/Safety';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 export default function App() {
   return (
@@ -49,6 +50,7 @@ export default function App() {
           <Route path="safety" element={<Safety />} />
           <Route path="contact" element={<Contact />} />
           <Route path="privacy" element={<Privacy />} />
+          <Route path="terms" element={<Terms />} />
         </Route>
 
         <Route element={<AuthLayout />}> 
