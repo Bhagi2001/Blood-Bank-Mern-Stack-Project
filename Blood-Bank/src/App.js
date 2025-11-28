@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 import Help from './pages/Help';
 import Safety from './pages/Safety';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
 
 export default function App() {
   return (
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="help" element={<Help />} />
           <Route path="safety" element={<Safety />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="privacy" element={<Privacy />} />
         </Route>
 
         <Route element={<AuthLayout />}> 
