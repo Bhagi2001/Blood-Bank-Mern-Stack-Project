@@ -2,11 +2,13 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useLocale } from '../context/LocaleContext';
+import { useTheme } from '../context/ThemeContext';
 
 
 export default function Navbar() {
   const { user, logout, isAuthenticated } = useAuth();
   const { locale, setLocale } = useLocale();
+  const { theme, toggle } = useTheme();
 
   return (
     <nav className="bb-nav bb-nav--frost">
@@ -34,6 +36,14 @@ export default function Navbar() {
           <button className={`bb-lang__btn ${locale === 'si' ? 'is-active' : ''}`} onClick={() => setLocale('si')}>සිං</button>
           <button className={`bb-lang__btn ${locale === 'ta' ? 'is-active' : ''}`} onClick={() => setLocale('ta')}>த</button>
         </div>
+        <button
+          title={theme === 'dark' ? 'Switch to light' : 'Switch to dark'}
+          onClick={toggle}
+          className="bb-btn bb-btn--ghost"
+          style={{ padding: '6px 10px', marginRight: 6 }}
+        >
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
         {isAuthenticated ? (
           <>
             <span className="bb-user">{user?.name} ({user?.role})</span>
