@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLocale } from '../context/LocaleContext';
 
 export default function Terms() {
+  const { t } = useLocale();
   return (
     <section className="bb-main">
-      <h2>Terms of Service</h2>
-      <p className="bb-muted">By using BloodLink you agree to these terms. Our platform is provided to facilitate communication between donors, hospitals, and organizations; medical decisions should always be made by qualified professionals.</p>
+      <h2>{t('terms.title')}</h2>
+      <p className="bb-muted">{t('terms.intro')}</p>
 
       <div style={{ marginTop: 12 }}>
         <h4>Use of the platform</h4>

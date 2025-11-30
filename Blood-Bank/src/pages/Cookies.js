@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLocale } from '../context/LocaleContext';
 
 export default function Cookies() {
+  const { t } = useLocale();
   return (
     <section className="bb-main">
-      <h2>Cookies Policy</h2>
-      <p className="bb-muted">We use cookies and similar technologies to improve site performance, remember preferences, and analyze site usage. Cookies do not store sensitive personal information.</p>
+      <h2>{t('cookies.title')}</h2>
+      <p className="bb-muted">{t('cookies.intro')}</p>
 
       <div style={{ marginTop: 12 }}>
         <h4>Types of cookies</h4>

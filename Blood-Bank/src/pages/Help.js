@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocale } from '../context/LocaleContext';
 
 const faqs = [
   { q: 'How do I request blood?', a: 'Go to Requests and fill the New Request form with patient details and required units.' },
@@ -8,6 +9,7 @@ const faqs = [
 ];
 
 export default function Help() {
+  const { t } = useLocale();
   const [query, setQuery] = useState('');
   const results = faqs.filter(f => {
     const q = query.trim().toLowerCase();
@@ -17,11 +19,11 @@ export default function Help() {
 
   return (
     <section className="bb-main">
-      <h2>Help Center</h2>
-      <p className="bb-muted">Search FAQs or browse common help topics below.</p>
+      <h2>{t('help.title')}</h2>
+      <p className="bb-muted">{t('help.searchPlaceholder')}</p>
 
       <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
-        <input className="bb-search" placeholder="Search FAQs" value={query} onChange={e => setQuery(e.target.value)} />
+        <input className="bb-search" placeholder={t('help.searchPlaceholder')} value={query} onChange={e => setQuery(e.target.value)} />
       </div>
 
       <div style={{ marginTop: 16 }}>
@@ -34,8 +36,8 @@ export default function Help() {
       </div>
 
       <div style={{ marginTop: 20 }}>
-        <h4>Still need help?</h4>
-        <p className="bb-muted">Use the Contact page to send us a message and our team will respond.</p>
+        <h4>{t('help.stillNeed')}</h4>
+        <p className="bb-muted">{t('help.contactPrompt')}</p>
       </div>
     </section>
   );

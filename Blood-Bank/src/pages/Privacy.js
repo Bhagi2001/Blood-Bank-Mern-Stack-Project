@@ -1,19 +1,16 @@
 import React from 'react';
+import { useLocale } from '../context/LocaleContext';
 
 export default function Privacy() {
+  const { t } = useLocale();
   return (
     <section className="bb-main">
-      <h2>Privacy Policy</h2>
-      <p className="bb-muted">BloodLink is committed to protecting donor and user privacy. We collect only the information necessary to connect donors, hospitals, and organizations, and we mask or anonymize personal identifiers where appropriate.</p>
+      <h2>{t('privacy.title')}</h2>
+      <p className="bb-muted">{t('privacy.intro')}</p>
 
       <div style={{ marginTop: 12 }}>
-        <h4>What we collect</h4>
-        <p className="bb-muted">Basic contact details, blood group, location (province/district), and donation history to facilitate safe blood matching and logistics.</p>
-      </div>
-
-      <div style={{ marginTop: 12 }}>
-        <h4>How we protect data</h4>
-        <p className="bb-muted">We never display full personal identifiers publicly. Sensitive data is only shared with authorized medical centers and verified personnel.</p>
+        <h4>{t('privacy.title')}</h4>
+        <p className="bb-muted">{t('privacy.intro')}</p>
       </div>
 
       <div style={{ marginTop: 12 }}>
