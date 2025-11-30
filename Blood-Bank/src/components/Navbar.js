@@ -7,7 +7,7 @@ import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
   const { user, logout, isAuthenticated } = useAuth();
-  const { locale, setLocale } = useLocale();
+  const { locale, setLocale, t } = useLocale();
   const { theme, toggle } = useTheme();
 
   return (
@@ -22,11 +22,11 @@ export default function Navbar() {
 
         {isAuthenticated && (
           <>
-            <NavLink to="/dashboard">Dashboard</NavLink>
-            <NavLink to="/inventory">Inventory</NavLink>
-            <NavLink to="/donors">Donors</NavLink>
-            <NavLink to="/hospitals">Hospitals</NavLink>
-            <NavLink to="/requests">Requests</NavLink>
+            <NavLink to="/dashboard">{t('nav.dashboard')}</NavLink>
+            <NavLink to="/inventory">{t('nav.inventory')}</NavLink>
+            <NavLink to="/donors">{t('nav.donors')}</NavLink>
+            <NavLink to="/hospitals">{t('nav.hospitals')}</NavLink>
+            <NavLink to="/requests">{t('nav.requests')}</NavLink>
           </>
         )}
       </div>
@@ -47,12 +47,12 @@ export default function Navbar() {
         {isAuthenticated ? (
           <>
             <span className="bb-user">{user?.name} ({user?.role})</span>
-            <button className="bb-btn" onClick={logout}>Logout</button>
+            <button className="bb-btn" onClick={logout}>{t('nav.logout')}</button>
           </>
         ) : (
           <>
-            <NavLink to="/login" className="bb-btn bb-btn--ghost">Login</NavLink>
-            <NavLink to="/register" className="bb-btn">Get Started</NavLink>
+            <NavLink to="/login" className="bb-btn bb-btn--ghost">{t('nav.login')}</NavLink>
+            <NavLink to="/register" className="bb-btn">{t('nav.register')}</NavLink>
           </>
         )}
       </div>
